@@ -1,0 +1,301 @@
+/* Fuentes oficiales Universidad Continental */
+@font-face {
+    font-family: 'Neue Plak';
+    src: url('recursos/fonts/NeuePlak-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Neue Plak';
+    src: url('recursos/fonts/NeuePlak-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --primary-purple: #7000B4;
+    --dark-purple: #4D007C;
+    --white: #FFFFFF;
+    --text-main: #1A1A1A;
+    --text-muted: #666666;
+    --bg-gray-light: #F7F7F7;
+    --border-gray: #E2E8F0;
+    --radius-lg: 2rem;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Neue Plak', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--white);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Base Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+/* Visibility Helpers */
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    .desktop-only {
+        display: block;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+}
+
+/* Hero Section (Right-side) */
+.hero-section {
+    display: none;
+    /* Hidden on Mobile */
+}
+
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .hero-section {
+        display: block;
+        flex: 2;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+/* Hero Images Display Logic - Desktop Only */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-img.active {
+    opacity: 1;
+}
+
+.desktop-hero-img {
+    display: none;
+    /* Mantener por compatibilidad o eliminar si ya no se usa */
+}
+
+.mobile-hero-img {
+    display: none;
+}
+
+/* Login Section (Right-side) */
+.login-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 0;
+    /* Sustancialmente más arriba */
+    position: relative;
+    min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+    .login-main {
+        padding: 40px 0 0;
+    }
+}
+
+.mobile-top-header {
+    text-align: center;
+    padding: 20px 24px 10px;
+    background: var(--white);
+}
+
+.logo-dark {
+    height: 60px;
+    /* Slightly larger original logo */
+    object-fit: contain;
+}
+
+.login-core {
+    width: 100%;
+    max-width: 440px;
+    margin: auto auto;
+    /* Centers the core vertically and horizontally in flex container */
+    padding: 0 24px;
+}
+
+.desktop-top-logo {
+    margin-bottom: 60px;
+    /* Más espacio respecto al texto de bienvenida */
+    text-align: center;
+}
+
+.login-form-area {
+    text-align: center;
+}
+
+.welcome-heading {
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.welcome-text {
+    /* color: var(--text-muted); */
+    font-size: 1.10rem;
+    margin-bottom: 40px;
+}
+
+/* Google Login Button - Fixed Spacing */
+.btn-google-login {
+    width: 100%;
+    max-width: 340px;
+    height: 52px;
+    background: var(--primary-purple);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    margin: 0 auto 24px;
+    padding: 0 20px;
+}
+
+.btn-google-login:hover {
+    background: var(--dark-purple);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(112, 0, 180, 0.2);
+}
+
+.btn-label {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.btn-label strong {
+    margin-left: 6px;
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.forgot-pwd-link {
+    display: inline-block;
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-bottom: 48px;
+    transition: var(--transition-smooth);
+}
+
+.forgot-pwd-link:hover {
+    color: var(--primary-purple);
+    text-decoration: underline;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 32px;
+    /* Un poco más de separación entre ellos */
+    justify-content: center;
+    margin-top: 70px;
+    /* Significativamente más abajo como se solicitó */
+    margin-bottom: 40px;
+}
+
+.pill-btn {
+    background: #5A00AA;
+    /* Morado UC */
+    color: var(--white);
+    padding: 3px 0px;
+    /* Más delgados */
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    min-width: 180px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: -20px 0px 0px #9169FF; */
+    /* Lila UC */
+    /* Estilo sugerido por usuario */
+}
+
+.pill-btn:hover {
+    background: #4a008c;
+    /* Even darker on hover */
+    transform: translateY(-2px);
+    box-shadow: -20px 0px 0px #9169FF;
+    /* Sombra un poco más grande al hacer hover */
+}
+
+/* Footers - Logic-specific visibility */
+/* Main Footer */
+.main-footer {
+    background: #000000;
+    width: 100%;
+    padding: 24px 24px;
+    text-align: center;
+    margin-top: auto;
+    /* Push to bottom if flex column */
+}
+
+.copyright-line {
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+
+/* Small Screens Adjustments */
+@media (max-width: 640px) {
+    .welcome-heading {
+        font-size: 1.75rem;
+    }
+}
