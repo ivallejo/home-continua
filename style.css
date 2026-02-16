@@ -16,7 +16,7 @@
 }
 
 :root {
-    --primary-purple: #7000B4;
+    --primary-purple: #5A00AA;
     --dark-purple: #4D007C;
     --white: #FFFFFF;
     --text-main: #1A1A1A;
@@ -246,17 +246,17 @@ body {
 }
 
 .pill-btn {
-    background: #5A00AA;
+    background: var(--dark-purple);;
     /* Morado UC */
     color: var(--white);
     padding: 3px 0px;
     /* Más delgados */
     border-radius: 999px;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 500;
     text-decoration: none;
     transition: var(--transition-smooth);
-    min-width: 180px;
+    min-width: 170px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
