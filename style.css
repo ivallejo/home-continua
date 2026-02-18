@@ -161,8 +161,8 @@ body {
 }
 
 .desktop-top-logo {
-    margin-bottom: 60px;
-    /* Más espacio respecto al texto de bienvenida */
+    margin-bottom: 40px;
+    /* Menos espacio para evitar problemas de resolución */
     text-align: center;
 }
 
@@ -179,7 +179,7 @@ body {
 .welcome-text {
     /* color: var(--text-muted); */
     font-size: 1.10rem;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 /* Google Login Button - Fixed Spacing */
@@ -225,7 +225,7 @@ body {
     color: var(--text-main);
     text-decoration: none;
     font-size: 0.95rem;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     transition: var(--transition-smooth);
 }
 
@@ -249,7 +249,7 @@ body {
         flex-direction: row;
         justify-content: center;
         gap: 32px;
-        margin-top: 70px;
+        margin-top: 40px;
     }
 }
 
